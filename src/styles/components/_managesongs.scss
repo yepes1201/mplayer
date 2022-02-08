@@ -1,9 +1,14 @@
 .managesongs {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
+
+  input {
+    max-width: 400px;
+  }
+}
+
+.managesongs__forms {
+  width: 100%;
 }
 
 @media screen and (max-width: 750px) {

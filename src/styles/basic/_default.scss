@@ -47,7 +47,7 @@ li {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-// Text Colors
+// Text
 .color-primary {
   color: $primary;
 }
@@ -68,6 +68,10 @@ li {
   color: $grey;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 .required {
   color: $primary;
 }
@@ -78,7 +82,7 @@ li {
   transition: background-color 0.1s ease;
 
   &:hover {
-    background-color: lighten($color: $primary, $amount: 10);
+    background-color: lighten($color: $primary, $amount: 10) !important;
   }
 }
 
@@ -119,7 +123,7 @@ li {
 }
 
 .bg-dark-light {
-  background-color: $dark-light;
+  background-color: $dark-light !important;
   transition: background-color 0.1s ease;
 
   &:hover {
@@ -183,9 +187,10 @@ li {
   border-radius: 5px;
   color: $white-grey;
   font-size: 14px;
-  width: 100%;
+  max-width: 400px;
   outline: none;
   padding: 12px 16px;
+  width: 100%;
 }
 
 ::-webkit-file-upload-button {
@@ -204,9 +209,28 @@ li {
   padding: 0;
 }
 
+// Tabs
+.tab {
+  display: flex;
+  margin-bottom: 1rem;
+  font-size: 14px;
+
+  li {
+    border-bottom: 1px solid $grey;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    color: $grey;
+    padding: 12px 16px;
+
+    &:hover {
+      background-color: $dark-light;
+    }
+  }
+}
+
 // Layout
 .container {
-  max-width: 900px;
+  max-width: 1100px;
 }
 
 .center {

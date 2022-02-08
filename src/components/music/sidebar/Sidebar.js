@@ -15,31 +15,31 @@ export const Sidebar = () => {
           </div>
           <div className="sidebar__nav mt-4">
             <ul>
-              <li>
-                <Link className="color-white-grey" to="/">
+              <Link className="color-white-grey" to="/">
+                <li>
                   <i className="fas fa-home mr-2"></i> Home
-                </Link>
-              </li>
-              <li>
-                <Link className="color-white-grey" to="/favorites">
+                </li>
+              </Link>
+              <Link className="color-white-grey" to="/favorites">
+                <li>
                   <i className="fas fa-heart mr-2"></i> Favorites
-                </Link>
-              </li>
-              <li>
-                <Link className="color-white-grey" to="/songs">
+                </li>
+              </Link>
+              <Link className="color-white-grey" to="/songs">
+                <li>
                   <i className="fas fa-music mr-2"></i> Manage Songs
-                </Link>
-              </li>
-              <li>
-                <Link className="color-white-grey" to="/favorites">
+                </li>
+              </Link>
+              <Link className="color-white-grey" to="/about">
+                <li>
                   <i className="fas fa-info-circle mr-2"></i> About
-                </Link>
-              </li>
-              <li>
-                <Link className="color-white-grey" to="/favorites">
+                </li>
+              </Link>
+              <Link className="color-white-grey" to="/settings">
+                <li>
                   <i className="fas fa-cog mr-2"></i> Settings
-                </Link>
-              </li>
+                </li>
+              </Link>
             </ul>
           </div>
           <button className="btn btn-logout mt-2">Log out</button>

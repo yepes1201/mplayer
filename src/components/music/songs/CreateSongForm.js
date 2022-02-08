@@ -3,7 +3,6 @@ import React from "react";
 export const CreateSongForm = ({ form, handleForm }) => {
   return (
     <div className="songform">
-      <h2 className="mb-2">Add Song</h2>
       <div className="mb-4">
         <label htmlFor="songName" className="form-label">
           Song Title <span className="required">*</span>

@@ -4,7 +4,7 @@ import { MusicCard } from "../MusicCard";
 
 export const Home = () => {
   return (
-    <>
+    <div className="container center">
       <MusicCard />
       <MusicCard />
       <MusicCard />
@@ -22,6 +22,6 @@ export const Home = () => {
       <MusicCard />
       <MusicCard />
       <MusicCard />
-    </>
+    </div>
   );
 };

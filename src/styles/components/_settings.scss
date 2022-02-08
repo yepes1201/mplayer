@@ -1,0 +1,25 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings__header {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.settings__profile {
+  align-items: center;
+  background-color: $dark-light;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+}
+
+.settings__buttons {
+  display: flex;
+  gap: 2rem;
+}
