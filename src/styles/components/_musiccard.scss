@@ -1,0 +1,57 @@
+.musiccard {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  width: 100%;
+
+  img {
+    width: 56px;
+    border-radius: 5px;
+  }
+
+  i {
+    font-size: 20px;
+  }
+
+  &:hover {
+    background-color: $dark-light;
+  }
+}
+
+.musiccard__song {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+
+  span {
+    color: $grey;
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+
+.musiccard__favorite {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 340px) {
+  .musiccard {
+    img {
+      width: 48px;
+    }
+  }
+
+  .musiccard__song {
+    gap: 0.5rem;
+
+    p {
+      font-size: 14px;
+    }
+
+    span {
+      font-size: 10px;
+    }
+  }
+}

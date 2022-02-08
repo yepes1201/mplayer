@@ -1,0 +1,112 @@
+.footer {
+  align-items: center;
+  display: flex;
+  background-color: $dark;
+  color: $white-grey;
+  height: 100px;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100px;
+  }
+}
+
+.footer__song {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+
+  span {
+    color: $grey;
+    font-weight: 300;
+    font-size: 14px;
+  }
+}
+
+.footer__buttons {
+  align-items: center;
+  display: flex;
+  left: 50%;
+  position: absolute;
+
+  div:nth-child(2) {
+    cursor: pointer;
+    margin: 0 16px;
+
+    i {
+      font-size: 2rem;
+    }
+  }
+}
+
+.footer__favorite {
+  position: absolute;
+  font-size: 20px;
+  left: calc(100% - 46px);
+
+  i {
+    cursor: pointer;
+  }
+}
+
+.footer__progress,
+.footer__progress-bg {
+  cursor: pointer;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.footer__progress {
+  background-color: $primary;
+  width: 20%;
+
+  &::after {
+    background-color: $white-grey;
+    border-radius: 100%;
+    content: "";
+    height: 8px;
+    position: absolute;
+    right: -4px;
+    top: -2px;
+    width: 8px;
+  }
+
+  &:hover {
+    background-color: $primary;
+  }
+}
+
+.footer__progress-bg {
+  background-color: $dark-light;
+}
+
+@media screen and (max-width: 750px) {
+  .footer {
+    padding: 0 12px;
+    img {
+      display: none;
+    }
+  }
+
+  .footer__buttons {
+    position: relative;
+    left: 0;
+
+    div:nth-child(1),
+    div:nth-child(3) {
+      display: none;
+    }
+    div:nth-child(2) {
+      margin: 0;
+    }
+  }
+
+  .footer__favorite {
+    display: none;
+  }
+}

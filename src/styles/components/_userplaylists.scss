@@ -1,0 +1,12 @@
+.userplaylists {
+  overflow-y: scroll;
+  height: 100%;
+
+  button {
+    background-color: $grey;
+
+    &:hover {
+      background-color: darken($color: $grey, $amount: 10);
+    }
+  }
+}

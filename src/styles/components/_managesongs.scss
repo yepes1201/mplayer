@@ -1,0 +1,13 @@
+.managesongs {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 750px) {
+  .managesongs {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,15 @@
+// Default Config
+@import "./config/config";
+@import "./basic/default";
+
+// Components
+@import "./components/sidebar";
+@import "./components/userplaylists";
+@import "./components/home";
+@import "./components/navbar";
+@import "./components/musicscreen";
+@import "./components/musiccard";
+@import "./components/footer";
+@import "./components/songform";
+@import "./components/managesongs";
+@import "./components/deletesong";

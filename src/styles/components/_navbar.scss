@@ -1,0 +1,31 @@
+.navbar {
+  background-color: $dark-light;
+  height: 60px;
+  margin-left: 300px;
+  width: calc(100% - 300px);
+}
+
+.navbar__header {
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  padding: 0 12px;
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+.navbar__menu-btn {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .navbar {
+    width: 100%;
+    margin-left: 0;
+  }
+  .navbar__menu-btn {
+    display: flex;
+  }
+}

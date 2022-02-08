@@ -1,0 +1,22 @@
+.deletesong {
+  width: 50%;
+  max-height: calc(100vh - 60px - 100px - 32px);
+}
+
+.deletesong__songs {
+  overflow-y: scroll;
+  width: 100%;
+  height: calc(100vh - 160px - 108px);
+}
+
+@media screen and (max-width: 750px) {
+  .deletesong {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .deletesong__songs {
+    overflow-y: scroll;
+    width: 100%;
+  }
+}
