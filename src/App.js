@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
+import { AuthContext } from "./context/auth/AuthContext";
 import { AppRouter } from "./routers/AppRouter";
 
 import "./styles/styles.css";
 
 export const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <BrowserRouter>
-      <AppRouter />
+      <AuthContext.Provider value={isLoggedIn}>
+        <AppRouter />
+      </AuthContext.Provider>
     </BrowserRouter>
   );
 };

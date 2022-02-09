@@ -1,0 +1,22 @@
+.auth__title {
+  color: $white-grey;
+  font-size: 1.85rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.auth__container {
+  background-color: $dark-light-2;
+  border-radius: 5px;
+  padding: 1rem;
+  max-width: 400px;
+}
+
+.auth__link {
+  color: $white-grey;
+
+  &:hover {
+    color: $primary;
+    text-decoration: underline;
+  }
+}

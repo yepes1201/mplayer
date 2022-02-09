@@ -8,6 +8,10 @@ import { Favorites } from "../components/music/favorites/Favorites";
 import { ManageSongs } from "../components/music/songs/ManageSongs";
 import { About } from "../components/music/about/About";
 import { Settings } from "../components/music/settings/Settings";
+import { Login } from "../components/auth/Login";
+import { Register } from "../components/auth/Register";
+import { RecoverPassword } from "../components/auth/RecoverPassword";
+import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
   return (
@@ -19,8 +23,13 @@ export const AppRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="/settings" element={<Settings />} />
       </Route>
-      {/* <Route path="/login" element={<Login />} */}
-      {/* <Route path="/register" element={<Register />} */}
+
+      <Route path="/auth" element={<PublicRoute />}>
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="recover-password" element={<RecoverPassword />} />
+      </Route>
+
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
