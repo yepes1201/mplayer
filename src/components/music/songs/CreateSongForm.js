@@ -14,7 +14,7 @@ export const CreateSongForm = ({ form, handleForm }) => {
           id="songName"
           type="text"
           name="songName"
-          placeholder="Koiwazurai..."
+          placeholder="Koiwazurai"
         />
       </div>
       <div className="mb-4">

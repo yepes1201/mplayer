@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../context/auth/AuthContext";
 import { UserPlaylists } from "./UserPlaylists";
 
 export const Sidebar = () => {
+  const { user, setUser, setIsLoggedIn } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setUser({});
+    setIsLoggedIn(false);
+  };
+
   return (
     <div className="sidebar">
       <div className="sidebar__container flex-column">
         <div>
           <div className="sidebar__user flex-row">
-            <h2>Daniel Yepes</h2>
+            <h2>{user.name}</h2>
             <div className="sidebar__menu-btn circle-btn bg-dark-light">
               <i className="fas fa-times"></i>
             </div>
@@ -42,7 +51,9 @@ export const Sidebar = () => {
               </Link>
             </ul>
           </div>
-          <button className="btn btn-logout mt-2">Log out</button>
+          <button onClick={handleLogout} className="btn btn-logout mt-2">
+            Log out
+          </button>
         </div>
         <hr className="mt-4" />
         <div className="mt-4">

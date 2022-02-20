@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { useForm } from "../../../hooks/useForm";
+import { AuthContext } from "../../../context/auth/AuthContext";
 
 import { icons } from "../../../icons/icons";
 import { SettingsForm } from "./SettingsForm";
 
 export const Settings = () => {
+  const { user } = useContext(AuthContext);
   const { form, handleForm } = useForm({
-    userName: "",
-    userEmail: "",
+    userName: user.name,
+    userEmail: user.email,
     userPassword: "",
   });
 
@@ -16,7 +18,7 @@ export const Settings = () => {
     <div className="settings container center">
       <div className="settings__header mb-4">
         <div className="settings__profile">{icons.userIcon}</div>
-        <h2>Daniel Yepes</h2>
+        <h2>{user.name}</h2>
       </div>
       <div>
         <SettingsForm form={form} handleForm={handleForm} />

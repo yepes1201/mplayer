@@ -213,6 +213,7 @@ h1 {
 ::-webkit-file-upload-button {
   background-color: $primary;
   border: none;
+  border-radius: 5px 0 0 5px;
   color: $white-grey;
   padding: 10px 12px;
   margin-right: 16px;

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { paths } from "../../helpers/path";
 import { icons } from "../../icons/icons";
 
-export const MusicCard = () => {
+export const MusicCard = ({ title, artist, img }) => {
   const { pathname } = useLocation();
   const icon =
     paths[pathname] === "Favorites" ? icons.filledHeart : icons.outlinedHeart;
@@ -11,13 +11,10 @@ export const MusicCard = () => {
   return (
     <div className="musiccard">
       <div className="musiccard__song">
-        <img
-          src="https://m.media-amazon.com/images/I/813J3tfErZL._SS500_.jpg"
-          alt="song-cover"
-        />
+        <img src={img} alt="song-cover" />
         <div>
-          <p>Bloody Valentine</p>
-          <span>Machine Gun Kelly</span>
+          <p>{title}</p>
+          <span>{artist}</span>
         </div>
       </div>
       <div className="musiccard__favorite">{icon}</div>
