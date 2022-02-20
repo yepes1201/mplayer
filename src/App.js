@@ -6,13 +6,10 @@ import { AppRouter } from "./routers/AppRouter";
 import "./styles/styles.css";
 
 export const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   return (
     <BrowserRouter>
-      <AuthContext.Provider
-        value={{ isLoggedIn, setIsLoggedIn, user, setUser }}
-      >
+      <AuthContext.Provider value={{ user, setUser }}>
         <AppRouter />
       </AuthContext.Provider>
     </BrowserRouter>

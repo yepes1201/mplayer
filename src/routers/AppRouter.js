@@ -16,7 +16,7 @@ import { RecoverPassword } from "../components/auth/RecoverPassword";
 import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
-  const { setUser, setIsLoggedIn } = useContext(AuthContext);
+  const { setUser } = useContext(AuthContext);
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
@@ -33,11 +33,9 @@ export const AppRouter = () => {
         .then((res) => res.json())
         .then(({ user }) => {
           if (user) {
-            setIsLoggedIn(true);
             setUser(user);
           } else {
             setUser({});
-            setIsLoggedIn(false);
           }
           setChecking(false);
         })
@@ -48,7 +46,7 @@ export const AppRouter = () => {
     } else {
       setChecking(false);
     }
-  }, [setIsLoggedIn, setUser]);
+  }, [setUser]);
 
   if (checking) {
     return <LoadingWheel checking={true} />;

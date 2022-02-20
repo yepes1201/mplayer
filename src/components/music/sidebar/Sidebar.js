@@ -4,12 +4,11 @@ import { AuthContext } from "../../../context/auth/AuthContext";
 import { UserPlaylists } from "./UserPlaylists";
 
 export const Sidebar = () => {
-  const { user, setUser, setIsLoggedIn } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     setUser({});
-    setIsLoggedIn(false);
   };
 
   return (

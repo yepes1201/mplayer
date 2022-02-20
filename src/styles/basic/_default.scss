@@ -36,6 +36,23 @@ li {
   text-decoration: none;
 }
 
+.form-error {
+  border: 1px solid rgba($color: red, $alpha: 0.3);
+  background-color: rgba($color: red, $alpha: 0.1);
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  margin-bottom: 10px;
+  padding: 8px;
+  text-align: center;
+  width: 100%;
+
+  p {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
 .auth {
   align-items: center;
   background-color: $dark-light;

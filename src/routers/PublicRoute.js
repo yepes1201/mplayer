@@ -4,9 +4,9 @@ import { Navigate, Outlet } from "react-router-dom";
 import { AuthContext } from "../context/auth/AuthContext";
 
 export const PublicRoute = () => {
-  const { isLoggedIn } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
-  if (isLoggedIn) {
+  if (user.uid) {
     return <Navigate to="/" />;
   }
 
