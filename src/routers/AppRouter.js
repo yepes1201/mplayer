@@ -14,6 +14,7 @@ import { Login } from "../components/auth/Login";
 import { Register } from "../components/auth/Register";
 import { RecoverPassword } from "../components/auth/RecoverPassword";
 import { PublicRoute } from "./PublicRoute";
+import { NewPassword } from "../components/auth/NewPassword";
 
 export const AppRouter = () => {
   const { setUser } = useContext(AuthContext);
@@ -67,6 +68,7 @@ export const AppRouter = () => {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="recover-password" element={<RecoverPassword />} />
+        <Route path="passwordreset" element={<NewPassword />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" />} />

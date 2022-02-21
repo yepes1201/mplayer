@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../../context/auth/AuthContext";
 
-import { LoadingWheel } from "../../LoadingWheel";
 import { MusicCard } from "../MusicCard";
 
 export const Home = () => {

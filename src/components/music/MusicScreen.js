@@ -7,7 +7,7 @@ import { FooterPlayer } from "./footer-player/FooterPlayer";
 import { AuthContext } from "../../context/auth/AuthContext";
 
 export const MusicScreen = () => {
-  const { user, isLoggedIn } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   if (!user.uid) {
     return <Navigate to="/auth/login" replace />;
