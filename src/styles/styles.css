@@ -902,18 +902,14 @@ h1 {
   background-color: #252525;
   border-radius: 5px;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  left: 50%;
+  left: 20%;
   padding: 12px;
   position: absolute;
   top: 10px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   width: 60%;
 }
 

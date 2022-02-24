@@ -8,7 +8,7 @@ import { notificationTypes } from "../../types/notification";
 import { sendEmail } from "../../helpers/api";
 
 export const RecoverPassword = () => {
-  const { ui, setUi, uiDefaultState } = useContext(UIContext);
+  const { setUi, uiDefaultState } = useContext(UIContext);
   const { form, handleForm } = useForm({ email: "" });
   const [formError, setFormError] = useState({ state: false, msg: "" });
 
@@ -21,12 +21,12 @@ export const RecoverPassword = () => {
       try {
         const { ok, msg } = await sendEmail(form);
         if (ok) {
-          setUi({ notification: true, msg, type: notificationTypes.success });
+          setUi({ active: true, msg, type: notificationTypes.success });
         } else {
-          setUi({ notification: true, msg, type: notificationTypes.error });
+          setUi({ active: true, msg, type: notificationTypes.error });
         }
       } catch ({ msg }) {
-        setUi({ notification: true, msg, type: notificationTypes.error });
+        setUi({ active: true, msg, type: notificationTypes.error });
       }
     } else {
       setFormError({ state: true, msg: "Please provide a valid email." });
@@ -41,16 +41,6 @@ export const RecoverPassword = () => {
 
   return (
     <div className="auth">
-      {ui.notification && (
-        <div className="notification">
-          <div
-            style={{ backgroundColor: ui.type.color }}
-            className="notification-bar"
-          ></div>
-          <p>{ui.msg}</p>
-          {ui.type.icon}
-        </div>
-      )}
       <div>
         <h2 className="auth__title">Recover Password</h2>
         <div className="auth__container">

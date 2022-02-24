@@ -3,15 +3,13 @@
   background-color: $dark-light-2;
   border-radius: 5px;
   color: white;
-  display: flex;
+  display: none;
   justify-content: space-between;
-  left: 50%;
+  left: 20%;
   padding: 12px;
   position: absolute;
   top: 10px;
-  transform: translateX(-50%);
   width: 60%;
-
   p {
     font-size: 14px;
   }
