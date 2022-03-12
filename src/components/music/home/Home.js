@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../../context/auth/AuthContext";
+import { getAllSongs } from "../../../helpers/api";
 
 import { MusicCard } from "../MusicCard";
 
@@ -8,23 +9,8 @@ export const Home = () => {
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/songs/${user.uid}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "x-token": JSON.parse(localStorage.getItem("token")),
-      },
-    })
-      .then((res) => res.json())
-      .then(({ songs, msg }) => {
-        if (songs) {
-          setSongs(songs);
-        } else {
-          console.log(msg);
-        }
-      })
-      .catch((err) => console.log(err));
-  }, [setSongs, user.uid]);
+    getAllSongs(user.uid).then(({ songs }) => setSongs(songs));
+  }, [user.uid]);
 
   return (
     <div className="container center">

@@ -216,6 +216,15 @@ h1 {
   padding: 10px 24px;
 }
 
+button:disabled {
+  cursor: wait;
+  background-color: gray !important;
+}
+
+button:disabled:hover {
+  background-color: gray !important;
+}
+
 .form-label {
   display: block;
   font-size: 18px;
