@@ -8,10 +8,20 @@ export const Home = () => {
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/songs/${user.uid}`)
+    fetch(`http://localhost:8080/api/songs/${user.uid}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "x-token": JSON.parse(localStorage.getItem("token")),
+      },
+    })
       .then((res) => res.json())
-      .then(({ songs }) => {
-        setSongs(songs);
+      .then(({ songs, msg }) => {
+        if (songs) {
+          setSongs(songs);
+        } else {
+          console.log(msg);
+        }
       })
       .catch((err) => console.log(err));
   }, [setSongs, user.uid]);
@@ -22,6 +32,7 @@ export const Home = () => {
         return (
           <MusicCard
             key={song.sid}
+            id={song.sid}
             title={song.title}
             artist={song.artist}
             img={song.img}

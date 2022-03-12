@@ -1,12 +1,33 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import { paths } from "../../helpers/path";
+import React, { useContext } from "react";
+
+import { AuthContext } from "../../context/auth/AuthContext";
+import { favoriteSongsUpdate } from "../../helpers/api";
 import { icons } from "../../icons/icons";
 
-export const MusicCard = ({ title, artist, img }) => {
-  const { pathname } = useLocation();
-  const icon =
-    paths[pathname] === "Favorites" ? icons.filledHeart : icons.outlinedHeart;
+export const MusicCard = ({ id, title, artist, img }) => {
+  const { user, setUser } = useContext(AuthContext);
+  const { favSongs } = user;
+  const icon = favSongs.includes(id) ? icons.filledHeart : icons.outlinedHeart;
+
+  const handleFavorites = async () => {
+    if (!favSongs.includes(id)) {
+      // * If the song is not included in favorites array
+      const newFavSongs = [...favSongs, id];
+      setUser({
+        ...user,
+        favSongs: newFavSongs,
+      });
+      await favoriteSongsUpdate(user.uid, newFavSongs);
+    } else {
+      // * If the song is included in favorites array
+      const newFavSongs = favSongs.filter((sid) => sid !== id);
+      setUser({
+        ...user,
+        favSongs: newFavSongs,
+      });
+      await favoriteSongsUpdate(user.uid, newFavSongs);
+    }
+  };
 
   return (
     <div className="musiccard">
@@ -17,7 +38,9 @@ export const MusicCard = ({ title, artist, img }) => {
           <span>{artist}</span>
         </div>
       </div>
-      <div className="musiccard__favorite">{icon}</div>
+      <div onClick={handleFavorites} className="musiccard__favorite">
+        {icon}
+      </div>
     </div>
   );
 };
